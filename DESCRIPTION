@@ -1,19 +1,24 @@
 Type: Package
 Package: capesR
-Title: Acesso aos Dados da CAPES
+Title: Access to CAPES Data
 Version: 0.1.0
-Date: 2024-11-30
+Date: 2024-12-17
 Authors@R: c(
             person("Hugo", "Vasconcelos Medeiros", email = "hugo.medeiros@ufpe.br", role = c("aut", "cre")),
             person("Dalson", "Figueiredo Filho", email = "dalson.figueiredofo@ufpe.br", role = "aut"),
-            person("André", "Leite", email = "andre.wanderley@ufpe.br", role = "aut")
+            person("André", "Leite", email = "leite@castlab.org", role = "aut")
             )
-Description: Acesso facilitado aos dados do Catálogo de Teses e Dissertações da Fundação Coordenação de Aperfeiçoamento de Pessoal de Nível Superior (Capes) entre os anos de 1987 e 2022, contendo as variáveis IES (ies), Área de Concentração (area), Nome do Programa de Pós-graduação (nome_programa), Tipo do Trabalho (tipo), Idioma do Trabalho (idioma), Identificação de Autoria (autoria), Resumo do Trabalho (resumo), Identificação de Orientação (orientacao), Região de Desenvolvimento (regiao) e Unidade Federativa (uf).
+Description: Provides simplified access to the data from the Catalog of Theses and Dissertations 
+    of the Brazilian Coordination for the Improvement of Higher Education Personnel (CAPES) 
+    for the years 1987 through 2022. The dataset includes variables such as Higher Education 
+    Institution (institution), Area of Concentration (area), Graduate Program Name (program_name), 
+    Type of Work (type), Language of Work (language), Author Identification (author), Abstract 
+    (abstract), Advisor Identification (advisor), Development Region (region), and Federative Unit (state).
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
 Depends: R (>= 4.0.0)
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 Imports:
     arrow,
     dplyr,
@@ -25,3 +30,5 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
+URL: <https://github.com/hugoavmedeiros/capesR>
+Config/Needs/website: tidyverse/tidytemplate

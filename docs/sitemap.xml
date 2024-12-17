@@ -1,14 +1,16 @@
 <urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
-<url><loc>/404.html</loc></url>
-<url><loc>/articles/capesR.html</loc></url>
-<url><loc>/articles/index.html</loc></url>
-<url><loc>/authors.html</loc></url>
-<url><loc>/index.html</loc></url>
-<url><loc>/reference/anos_osf.html</loc></url>
-<url><loc>/reference/baixar_dados_capes.html</loc></url>
-<url><loc>/reference/buscar_texto_capes.html</loc></url>
-<url><loc>/reference/df_capes_sintetico.html</loc></url>
-<url><loc>/reference/index.html</loc></url>
-<url><loc>/reference/ler_dados_capes.html</loc></url>
+<url><loc>https://github.com/hugoavmedeiros/capesR/404.html</loc></url>
+<url><loc>https://github.com/hugoavmedeiros/capesR/articles/capesR.html</loc></url>
+<url><loc>https://github.com/hugoavmedeiros/capesR/articles/index.html</loc></url>
+<url><loc>https://github.com/hugoavmedeiros/capesR/authors.html</loc></url>
+<url><loc>https://github.com/hugoavmedeiros/capesR/index.html</loc></url>
+<url><loc>https://github.com/hugoavmedeiros/capesR/reference/anos_osf.html</loc></url>
+<url><loc>https://github.com/hugoavmedeiros/capesR/reference/capes_synthetic_df.html</loc></url>
+<url><loc>https://github.com/hugoavmedeiros/capesR/reference/df_capes_sintetico.html</loc></url>
+<url><loc>https://github.com/hugoavmedeiros/capesR/reference/download_capes_data.html</loc></url>
+<url><loc>https://github.com/hugoavmedeiros/capesR/reference/index.html</loc></url>
+<url><loc>https://github.com/hugoavmedeiros/capesR/reference/read_capes_data.html</loc></url>
+<url><loc>https://github.com/hugoavmedeiros/capesR/reference/search_capes_text.html</loc></url>
+<url><loc>https://github.com/hugoavmedeiros/capesR/reference/years_osf.html</loc></url>
 </urlset>
 

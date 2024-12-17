@@ -1,157 +1,172 @@
-# capesR
 
-![devel version](https://img.shields.io/badge/devel%20version-0.1.0-yellow)
-![License](https://img.shields.io/badge/license-GPL--3-blue)
+# capesR <img src="man/figures/logo.png" align="right" height="124" alt="" />
+
+![devel version](https://img.shields.io/badge/devel%20version-0.1.0-yellow)&nbsp; 
+![License](https://img.shields.io/badge/license-GPL--3-blue)&nbsp; 
 [![Documentation](https://img.shields.io/badge/docs-pkgdown-blue)](https://hugoavmedeiros.github.io/capesR/)
 
-**capesR** é um pacote R para facilitar o acesso e a manipulação dos dados do Catálogo de Teses e Dissertações da Fundação Coordenação de Aperfeiçoamento de Pessoal de Nível Superior (CAPES), com informações sobre teses e dissertações defendidas em instituições de ensino superior (IES) no Brasil .
+**capesR** is an R package designed to facilitate access to and manipulation of data from the Catalog of Theses and Dissertations maintained by the Brazilian Coordination for the Improvement of Higher Education Personnel (CAPES). This catalog contains information about theses and dissertations defended at higher education institutions (HEIs) in Brazil.
 
-Os dados originais da Capes estão disponíveis em [dadosabertos.capes.gov.br](https://dadosabertos.capes.gov.br/group/catalogo-de-teses-e-dissertacoes-brasil).
+The original CAPES data is available at [dadosabertos.capes.gov.br](https://dadosabertos.capes.gov.br/group/catalogo-de-teses-e-dissertacoes-brasil).
 
-Os dados utilizados no pacote estão disponíveis no repositório do [The Open Science Framework (OSF)](https://osf.io/4a5b7/).
+The data used in this package is available in the repository of the [The Open Science Framework (OSF)](https://osf.io/4a5b7/).
 
-## Instalação
+## Installation
 
-Você pode instalar este pacote diretamente do GitHub com:
+You can install this package directly from GitHub with:
 
 ```r
-# Instale o pacote remotes, se ainda não tiver
+# Install the remotes package if not already installed
 install.packages("remotes")
 
-# Instale o capesR a partir do GitHub
+# Install capesR from GitHub
 remotes::install_github("hugoavmedeiros/capesR")
 ```
 
-## Funções
+## Functions
 
-### Baixar dados
+### Download Data
 
-A função `baixar_dados_capes` permite baixar arquivos de dados da CAPES hospedados no OSF. Você pode especificar os anos desejados, e os arquivos correspondentes serão salvos localmente.
+The `download_capes_data` function allows you to download CAPES data files hosted on OSF. You can specify the desired years, and the corresponding files will be saved locally.
 
-#### Exemplo 1
-Baixar dados usando o diretório temporário (padrão da função)
+#### Example 1
+Download data using the temporary directory (default):
+
 ```r
 library(capesR)
 library(dplyr)
 
-# Baixar dados dos anos 1987 e 1990
-arquivos_capes <- baixar_dados_capes(c(1987, 1990))
+# Download data for the years 1987 and 1990
+capes_files <- download_capes_data(c(1987, 1990))
 
-# Visualizar a lista de arquivos baixados
-arquivos_capes %>% glimpse()
+# View the list of downloaded files
+capes_files %>% glimpse()
 ```
-Neste caso, os dados não irão persistir para usos futuros. 
+In this case, the data will not persist for future use.
 
-#### Exemplo 2 - Reutilização dos dados
+#### Example 2 - Reusing Data
 
-Recomenda-se definir um diretório persistente para armazenar os dados baixados, ao invés de usar o diretório temporário padrão (`tempdir()`). Isso permitirá reusar os dados no futuro. 
+It is recommended to define a persistent directory to store the downloaded data instead of using the default temporary directory (`tempdir()`). This allows you to reuse the data later.
 
 ```r
-# Definir o diretório onde os dados serão armazenados
-diretorio_dados <- "/dados_capes"
+# Define the directory where the data will be stored
+data_directory <- "/capes_data"
 
-# Baixar dados dos anos 1987 e 1990 com indicação de diretório persistente
-arquivos_capes <- baixar_dados_capes(
+# Download data for 1987 and 1990 using a persistent directory
+capes_files <- download_capes_data(
   c(1987, 1990),
-  destino = diretorio_dados)
-```
-No caso da utilização de um diretório persistente, os dados serão baixados apenas uma vez. Nos usos posteriores a função informará quais arquivos já existem no diretório, e montará apenas a lista com o endereço dos dados disponíveis. 
-
-### Combinar dados
-Use a função ler_dados_capes para combinar os arquivos baixados a partir de uma lista de arquivos gerada com a função `baixar_dados_capes` ou construída manualmente. 
-
-#### Exemplo 1 - Combinação sem filtros
-
-```r
-# Combinar todos os dados selecionados, sem uso de filtros
-dados_sem_filtro <- ler_dados_capes(arquivos_capes)
-
-# Visualizar os dados combinados
-dados_sem_filtro %>% glimpse()
+  destination = data_directory)
 ```
 
-#### Exemplo 2 - Combinação dos dados com filtros exatos
-Os filtros  são aplicados antes de os dados serem lidos, melhorando a performance. 
+In this case, data will only be downloaded once. Future calls will identify which files already exist and return their paths.
+
+### Combine Data
+
+Use the `read_capes_data` function to combine the downloaded files from a list generated by `download_capes_data` or manually created.
+
+#### Example 1 - Combine Data Without Filters
 
 ```r
-# Crie um objeto com os filtros 
-filtro_exato <- list(
+# Combine all selected data without filters
+combined_data <- read_capes_data(capes_files)
+
+# View the combined data
+combined_data %>% glimpse()
+```
+
+#### Example 2 - Combine Data with Exact Filters
+
+Filters are applied before reading the data, improving performance.
+
+```r
+# Create a filter object
+exact_filter <- list(
   ano_base = c(2021, 2022),
   uf = c("PE", "CE")
 )
 
-# Combinar os dados já filtrados
-dados_filtro_exato <- ler_dados_capes(arquivos_capes, filtro_exato)
+# Combine filtered data
+filtered_data <- read_capes_data(capes_files, exact_filter)
 
-# Visualizar os dados combinados
-dados_filtro_exato %>% glimpse()
+# View the filtered data
+filtered_data %>% glimpse()
 ```
 
-#### Exemplo 3 - Combinação dos dados com filtros de texto
-Os filtros exatos são aplicados antes de os dados serem lidos, melhorando a performance, e o filtro de texto é otimizado para acelerar a busca nos dados. 
+#### Example 3 - Combine Data with Text Filters
+
+Exact filters are applied before reading for performance, and the text filter is optimized for quick searches.
 
 ```r
-# Crie um objeto com os filtros 
-filtro_texto <- list(
+# Create a filter object
+text_filter <- list(
   ano_base = c(2018, 2019, 2020, 2021, 2022),
   uf = c("PE", "CE"),
-  titulo = "educacao"
+  titulo = "Educação"
 )
 
-# Combinar os dados já filtrados
-dados_filtro_texto <- ler_dados_capes(arquivos_capes, filtro_texto)
+# Combine filtered data
+text_filtered_data <- read_capes_data(capes_files, text_filter)
 
-# Visualizar os dados combinados
-dados_filtro_texto %>% glimpse()
+# View the filtered data
+text_filtered_data %>% glimpse()
 ```
 
-### Realizar buscas
-Para realizar buscas de texto em dados já combinados, você pode usar a  função `buscar_texto_capes` informando o termo e o campo de texto  (titulo, resumo, autoria e orientacao)
+### Search Text
 
-#### Exemplo:
+To search for text in already combined data, use the `search_capes_text` function, specifying the term and the text field (e.g., title, abstract, author, or advisor).
+
+#### Example:
+
 ```r
-resultados <- buscar_texto_capes(
-  dados = dados_capes,
-  termo = "educacao",
-  campo = "titulo"
+results <- search_capes_text(
+  data = combined_data,
+  term = "Educação",
+  field = "titulo"
 )
 ```
-## Dados
-### Dados Sintéticos
-O pacote também fornece um conjunto de dados sintéticos, df_capes_sintetico, que contém informações agregadas do Catálogo de Teses e Dissertações. Esses dados foram sintetizados para facilitar análises rápidas e prototipagem, sem a necessidade de baixar e processar arquivos completos.
 
-#### Estrutura dos Dados
-Os dados sintéticos incluem as seguintes colunas:
+## Data
 
-- ano_base: Ano base do dado.
-- ies: Instituição de Ensino Superior.
-- area: Área de Concentração.
-- nome_programa: Nome do Programa de Pós-graduação.
-- tipo: Tipo do trabalho (ex.: Mestrado, Doutorado).
-- regiao: Região do Brasil.
-- uf: Unidade Federativa (estado).
-- n: Número total de trabalhos.
+### Synthetic Data
 
-#### Carregando os Dados
-Os dados sintéticos estão disponíveis diretamente no pacote e podem ser carregados com o comando:
+The package also provides a set of synthetic data, `capes_synthetic_df`, which contains aggregated information from the CAPES Catalog of Theses and Dissertations. These synthetic data simplify quick analyses and prototyping without requiring full data downloads and processing.
+
+#### Data Structure
+
+The synthetic data includes the following columns:
+
+- **base_year**: Reference year of the data.
+- **institution**: Higher Education Institution.
+- **area**: Area of Concentration.
+- **program_name**: Graduate Program Name.
+- **type**: Type of work (e.g., Master's, Doctorate).
+- **region**: Region of Brazil.
+- **state**: Federative Unit (state).
+- **n**: Total number of works.
+
+#### Loading the Data
+
+The synthetic data is available directly in the package and can be loaded with:
 
 ```r
-data(df_capes_sintetico)
+data(capes_synthetic_df)
 
-# Visualizar as primeiras linhas dos dados
-head(df_capes_sintetico)
+# View the first rows of the data
+head(capes_synthetic_df)
 ```
-#### Exemplo de Uso
-Você pode utilizar os dados sintéticos para criar análises exploratórias ou gráficos rápidos:
+
+#### Example Usage
+
+You can use the synthetic data for quick exploratory analyses or charts:
 
 ```r
-# Carregar os dados
-data(df_capes_sintetico)
+# Load the data
+data(capes_synthetic_df)
 
-# Exemplo: Contagem por ano e tipo de trabalho
+# Example: Count by year and type of work
 library(dplyr)
-df_capes_sintetico %>%
-  group_by(ano_base, tipo) %>%
+capes_synthetic_df %>%
+  group_by(base_year, type) %>%
   summarise(total = sum(n)) %>%
   arrange(desc(total))
 ```

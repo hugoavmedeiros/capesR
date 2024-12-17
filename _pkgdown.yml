@@ -1,0 +1,21 @@
+url: https://github.com/hugoavmedeiros/capesR
+template:
+  light-switch: false
+  dark-mode: false
+  trailing_slash_redirect: true
+  package: tidytemplate
+  bootstrap: 5
+  bslib:
+
+navbar:
+  structure:
+    right: [search, github]
+  components:
+    github:
+      icon: fa-github
+      href: https://github.com/hugoavmedeiros/capesR
+      aria-label: Github
+
+development:
+  mode: auto
+  

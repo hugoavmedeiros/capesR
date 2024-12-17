@@ -4,3 +4,7 @@
 ^Meta$
 ^local_config\.R$
 ^docs$
+^_pkgdown\.yml$
+^pkgdown$
+^data-raw$
+^cran-comments\.md$

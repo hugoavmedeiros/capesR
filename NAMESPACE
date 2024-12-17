@@ -2,7 +2,10 @@
 
 export(baixar_dados_capes)
 export(buscar_texto_capes)
+export(download_capes_data)
 export(ler_dados_capes)
+export(read_capes_data)
+export(search_capes_text)
 importFrom(arrow,open_dataset)
 importFrom(dplyr,filter)
 importFrom(magrittr,"%>%")
