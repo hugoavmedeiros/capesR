@@ -13,7 +13,7 @@ Description: Provides simplified access to the data from the Catalog of Theses a
     for the years 1987 through 2022. The dataset includes variables such as Higher Education 
     Institution (institution), Area of Concentration (area), Graduate Program Name (program_name), 
     Type of Work (type), Language of Work (language), Author Identification (author), Abstract 
-    (abstract), Advisor Identification (advisor), Development Region (region), and Federative Unit (state).
+    (abstract), Advisor Identification (advisor), Development Region (region), State (state).
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true

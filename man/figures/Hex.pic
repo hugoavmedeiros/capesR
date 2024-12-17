@@ -1,0 +1,37 @@
+# Desenho dos pontos conectados em Pikchr
+
+lgt = 0.4
+
+define hex_up { 
+    A:line right $1*(sqrt(3)/2) down $1/2 \
+        then down $1 \
+        then down $1/2 left $1*(sqrt(3)/2) \
+        then up $1/2 left $1*(sqrt(3)/2) \
+        then up $1 \
+        then right $1*(sqrt(3)/2) up $1/2 \
+        close color $3 fill $4
+    text $2 at last .c color $5
+}
+
+
+H2: [hex_up(lgt ,  "CAPES" bold big big , 0x0353a4, 0x5aa9e6, white)]
+"R" bold big big at 1/2<H2.c, H2.s>
+
+
+
+P0: dot at H2.c + (.1*lgt,.85*lgt) rad lgt/200
+P1: dot invis color red at H2.c + (-.5*lgt,.5*lgt) rad lgt/200
+P2: dot invis color red at H2.c + (0*lgt, 0.15*lgt) rad lgt/200
+P3: dot invis color red at H2.c + (.6*lgt,.45*lgt) rad lgt/200
+P4: dot invis color red at H2.c + (.23*lgt,.7*lgt) rad lgt/200
+P5: dot invis color red at H2.c + (0.0*lgt,.65*lgt) rad lgt/200
+Q0: dot invis at P5 color blue  rad lgt/200
+Q1: dot invis at P5 + (-0.5*lgt, 0.1*lgt) color blue  rad lgt/200 
+Q2: dot invis at P5 + (-0.3*lgt, -0.3*lgt) color blue  rad lgt/200 
+Q3: dot invis at P5 + (0.45*lgt, -0.35*lgt) color blue  rad lgt/200 
+Q4: dot invis at P5 + (0.35*lgt,  -0.08*lgt) color blue  rad lgt/200 
+
+spline from P0 to P1 then to P2 then to P3 then to P4 then to P5 thin thin  
+spline from Q0 to Q1 then to Q2 then to Q3 then to Q4 then close thin thin  
+PT: dot color 0x28B463 at H2.c + (0, .5*lgt) rad lgt/20  
+

@@ -1,0 +1,10 @@
+<svg style='width:100%;height:auto;font-size:80%;font-family:Jost;margin:10px 0 10px 0;' xmlns='http://www.w3.org/2000/svg'  class="pikchr" viewBox="0 0 116.226 119.52"><def><style type="text/css">@import url(https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900);</style></def>
+<path d="M58.113,2.16L107.996,30.96L107.996,88.56L58.113,117.36L8.22994,88.56L8.22994,30.96L58.113,2.16Z"  style="fill:rgb(90,169,230);stroke-width:2.16;stroke-linejoin:round;stroke:rgb(3,83,164);" />
+<text lengthAdjust="spacingAndGlyphs"  x="58.113" y="59.76" text-anchor="middle" font-weight="bold" fill="rgb(255,255,255)" font-size="156.25%" dominant-baseline="central">CAPES</text>
+<text x="58.113" y="88.56" text-anchor="middle" font-weight="bold" fill="rgb(0,0,0)" font-size="156.25%" dominant-baseline="central">R</text>
+<circle cx="63.873" cy="10.8" r="0.288" style="fill:rgb(0,0,0);stroke-width:2.16;stroke:rgb(0,0,0);" />
+<path d="M63.873,10.8 L 46.593,20.88 Q 29.313,30.96 43.713,41.04 Q 58.113,51.12 75.393,42.48 Q 92.673,33.84 82.017,26.64 Q 71.361,19.44 64.737,20.88 L 58.113,22.32"  style="fill:none;stroke-width:0.969624;stroke:rgb(0,0,0);" />
+<path d="M58.113,22.32 L 43.713,19.44 Q 29.313,16.56 35.073,28.08 Q 40.833,39.6 62.433,41.04 Q 84.033,42.48 81.153,34.704 Q 78.273,26.928 68.193,24.624 L 58.113,22.32Z"  style="fill:none;stroke-width:0.969624;stroke:rgb(0,0,0);" />
+<circle cx="58.113" cy="30.96" r="2.88" style="fill:rgb(40,180,99);stroke-width:2.16;stroke:rgb(40,180,99);" />
+</svg>
+
