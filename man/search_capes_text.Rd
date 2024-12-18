@@ -23,7 +23,12 @@ A `data.frame` with rows matching the search or a message indicating no results 
 This function allows searching for specific terms in the text fields of a previously loaded `data.frame`.
 }
 \examples{
-\dontrun{
+\donttest{
+# Download data for the years 1987 and 1990
+capes_files <- download_capes_data(c(1987, 1990))
+# Combine all selected data
+combined_data <- read_capes_data(capes_files)
+# Search data
 results <- search_capes_text(
 data = combined_data,
 term = "Educação",

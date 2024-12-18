@@ -9,7 +9,7 @@ Authors@R: c(
             person("André", "Leite", email = "leite@castlab.org", role = "aut")
             )
 Description: Provides simplified access to the data from the Catalog of Theses and Dissertations 
-    of the Brazilian Coordination for the Improvement of Higher Education Personnel (CAPES) 
+    of the Brazilian Coordination for the Improvement of Higher Education Personnel (CAPES, <https://catalogodeteses.capes.gov.br>) 
     for the years 1987 through 2022. The dataset includes variables such as Higher Education 
     Institution (institution), Area of Concentration (area), Graduate Program Name (program_name), 
     Type of Work (type), Language of Work (language), Author Identification (author), Abstract 

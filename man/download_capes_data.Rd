@@ -5,14 +5,16 @@
 \alias{baixar_dados_capes}
 \title{Download CAPES Data}
 \usage{
-download_capes_data(years, destination = tempdir())
+download_capes_data(years, destination = tempdir(), timeout = 120)
 
-baixar_dados_capes(years, destination = tempdir())
+baixar_dados_capes(years, destination = tempdir(), timeout = 120)
 }
 \arguments{
 \item{years}{A vector with the desired years.}
 
 \item{destination}{The directory where the files will be saved (default: temporary directory).}
+
+\item{timeout}{The timeout in seconds for the download process (default: 120 seconds).}
 }
 \value{
 A list of file paths for the downloaded or already existing files.
@@ -21,7 +23,7 @@ A list of file paths for the downloaded or already existing files.
 Downloads CAPES theses and dissertations data files from OSF for selected years.
 }
 \examples{
-\dontrun{
+\donttest{
 # Download data for the years 1987 and 1990
 capes_files <- download_capes_data(c(1987, 1990))
 }

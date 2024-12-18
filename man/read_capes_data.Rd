@@ -21,7 +21,9 @@ A `data.frame` containing the combined and filtered data.
 This function combines data from multiple Parquet files and applies optional filters, including text-based searches.
 }
 \examples{
-\dontrun{
+\donttest{
+# Download data for the years 1987 and 1990
+capes_files <- download_capes_data(c(1987, 1990))
 # Combine all selected data
 combined_data <- read_capes_data(capes_files)
 }

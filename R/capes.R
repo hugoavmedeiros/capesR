@@ -54,7 +54,9 @@ utils::globalVariables(".data")
 #' @importFrom stringr str_detect fixed
 #' @importFrom rlang sym
 #' @examples
-#' \dontrun{
+#' \donttest{
+#' # Download data for the years 1987 and 1990
+#' capes_files <- download_capes_data(c(1987, 1990))
 #' # Combine all selected data
 #' combined_data <- read_capes_data(capes_files)
 #' }
@@ -129,7 +131,12 @@ ler_dados_capes <- read_capes_data
 #' @importFrom stringr str_detect fixed
 #' @importFrom magrittr %>%
 #' @examples
-#' \dontrun{
+#' \donttest{
+#' # Download data for the years 1987 and 1990
+#' capes_files <- download_capes_data(c(1987, 1990))
+#' # Combine all selected data
+#' combined_data <- read_capes_data(capes_files)
+#' # Search data
 #' results <- search_capes_text(
 #' data = combined_data,
 #' term = "Educação",
@@ -176,16 +183,24 @@ buscar_texto_capes <- search_capes_text
 #'
 #' @param years A vector with the desired years.
 #' @param destination The directory where the files will be saved (default: temporary directory).
+#' @param timeout The timeout in seconds for the download process (default: 120 seconds).
 #' @return A list of file paths for the downloaded or already existing files.
 #' @importFrom utils download.file
 #' @importFrom utils data 
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' # Download data for the years 1987 and 1990
 #' capes_files <- download_capes_data(c(1987, 1990))
 #' }
 #' @export
-download_capes_data <- function(years, destination = tempdir()) {
+download_capes_data <- function(years, destination = tempdir(), timeout = 120) {
+  
+  # Save the current timeout and restore it on exit
+  original_timeout <- getOption("timeout")
+  on.exit(options(timeout = original_timeout), add = TRUE)
+  
+  # Set the new timeout
+  options(timeout = timeout)
   
   # Check if destination directory exists, if not, try to create it
   if (!dir.exists(destination)) {
@@ -198,9 +213,6 @@ download_capes_data <- function(years, destination = tempdir()) {
       message("Directory successfully created: ", destination)
     }
   }
-  
-  # Adjust timeout globally
-  options(timeout = 120)  # Timeout of 120 seconds
   
   # Load the dataset with OSF IDs
   data("years_osf", package = "capesR", envir = environment())
