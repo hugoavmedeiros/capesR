@@ -1,6 +1,8 @@
 
 # capesR <img src="man/figures/logo.png" align="right" height="124" alt="" />
 
+![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/capesR)&nbsp; 
+![CRAN Downloads](https://cranlogs.r-pkg.org/badges/grand-total/capesR)&nbsp;
 ![devel version](https://img.shields.io/badge/devel%20version-0.1.0-yellow)&nbsp; 
 ![License](https://img.shields.io/badge/license-GPL--3-blue)&nbsp; 
 [![Documentation](https://img.shields.io/badge/docs-pkgdown-blue)](https://hugoavmedeiros.github.io/capesR/)
