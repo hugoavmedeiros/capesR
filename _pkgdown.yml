@@ -1,4 +1,5 @@
-url: https://github.com/hugoavmedeiros/capesR
+url: https://hugoavmedeiros.github.io/capesR
+destination: docs
 template:
   light-switch: false
   dark-mode: false

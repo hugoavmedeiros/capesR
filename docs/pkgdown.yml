@@ -3,7 +3,7 @@ pkgdown: 2.1.1
 pkgdown_sha: ~
 articles:
   capesR: capesR.html
-last_built: 2024-12-19T18:05Z
+last_built: 2024-12-19T18:11Z
 urls:
-  reference: https://github.com/hugoavmedeiros/capesR/reference
-  article: https://github.com/hugoavmedeiros/capesR/articles
+  reference: https://hugoavmedeiros.github.io/capesR/reference
+  article: https://hugoavmedeiros.github.io/capesR/articles
