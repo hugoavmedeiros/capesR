@@ -18,11 +18,8 @@ The data used in this package is available in the repository of the [The Open Sc
 You can install this package directly from GitHub with:
 
 ```r
-# Install the remotes package if not already installed
-install.packages("remotes")
-
-# Install capesR from GitHub
-remotes::install_github("hugoavmedeiros/capesR")
+# Install capesR from CRAN
+install.packages('capesR')
 ```
 
 ## Functions

@@ -30,5 +30,5 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
-URL: <https://github.com/hugoavmedeiros/capesR>
-Config/Needs/website: tidyverse/tidytemplate
+URL: https://github.com/hugoavmedeiros/capesR
+BugReports: https://github.com/hugoavmedeiros/capesR/issues
