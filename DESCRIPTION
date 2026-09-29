@@ -4,8 +4,10 @@ Title: Access to CAPES Data
 Version: 0.2.1
 Date: 2026-09-19
 Authors@R: c(
-            person("André", "Leite", email = "leite@castlab.org", role = c("aut", "cre")),
-            person("Hugo", "Vasconcelos Medeiros", email = "hugoavmedeiros@gmail.com", role = "aut"),
+            person("André", "Leite", email = "leite@castlab.org", role = c("aut", "cre"),
+                   comment = c(ORCID = "0000-0002-4718-9766")),
+            person("Hugo", "Vasconcelos Medeiros", email = "hugoavmedeiros@gmail.com", role = "aut",
+                   comment = c(ORCID = "0000-0001-6249-0920")),
             person("Dalson", "Figueiredo Filho", email = "dalson.figueiredofo@ufpe.br", role = "aut")
             )
 Description: Provides simplified access to the data from the Catalog of Theses and Dissertations 
