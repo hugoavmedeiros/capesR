@@ -8,7 +8,8 @@ Authors@R: c(
                    comment = c(ORCID = "0000-0002-4718-9766")),
             person("Hugo", "Vasconcelos Medeiros", email = "hugoavmedeiros@gmail.com", role = "aut",
                    comment = c(ORCID = "0000-0001-6249-0920")),
-            person("Dalson", "Figueiredo Filho", email = "dalson.figueiredofo@ufpe.br", role = "aut")
+            person("Dalson", "Figueiredo Filho", email = "dalson.figueiredofo@ufpe.br", role = "aut",
+                   comment = c(ORCID = "0000-0001-6982-2262"))
             )
 Description: Provides simplified access to the data from the Catalog of Theses and Dissertations 
     of the Brazilian Coordination for the Improvement of Higher Education Personnel (CAPES, <https://catalogodeteses.capes.gov.br>) 
